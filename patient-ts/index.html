@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul {
+        width: 98%;
+        overflow: auto;
+        margin: 20px;
+        padding: 0;
+      }
+      li {
+        list-style-type: none;
+        height: 24px;
+        white-space: nowrap;
+      }
+      span {
+        width: 150px;
+        display: inline-block;
+      }
+      .list-head {
+        font-weight: bold;
+      }
+      .model-box {
+        display: none;
+        position: absolute;
+        width: 800px;
+        left: calc(50% - 400px);
+        padding: 30px;
+        background: #fff;
+        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+      }
+      .message {
+        color: #f56c6c;
+      }
+      @media screen and (max-width: 800px) {
+        .model-box {
+          width: 400px;
+          left: calc(50% - 200px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Patient App</h1>
+    <input id="searchId" type="text" />
+    <button type="button" onClick="onSearch()">Search</button>
+    <button type="button" onClick="showAdd()">Add Patient</button>
+    <div id="modelBox" class="model-box">
+      <form>
+        Patient ID : <br />
+        <input id="patientId" type="text" />
+        <br /><br />
+        First name : <br />
+        <input id="firstName" type="text" />
+        <br /><br />
+        Last name : <br />
+        <input id="lastName" type="text" />
+        <br /><br />
+        Date of birth : <br />
+        <input id="birthDate" type="date" />
+        <br /><br />
+        Gender : <br />
+        <select id="gender" style="padding: 5px; width: 300px">
+          <option value="Female" selected>Female</option>
+          <option value="Male">Male</option>
+          <option value="Unspecified">Unspecified</option>
+        </select>
+        <br /><br />
+        Primary insurance : <br />
+        <select id="insurance" style="padding: 5px; width: 300px">
+          <option value="Medicare" selected>Medicare</option>
+          <option value="Private Health Insurance">
+            Private Health Insurance
+          </option>
+        </select>
+        <br /><br />
+        Address : <br />
+        <input id="address" type="text" />
+        <br /><br />
+        Contact number : <br />
+        <input id="cNumber" type="text" />
+        <br /><br />
+        Next of kin : <br />
+        <input id="kinNext" type="text" />
+        <br /><br />
+        <button type="button" onClick="handleAdd()">confirm</button>
+        <button type="button" onClick="cancelAdd()">cancel</button>
+        <br />
+        <p id="message" class="message"></p>
+        <p></p>
+      </form>
+    </div>
+    <ul id="patientList">
+      <li class="list-head">
+        <span>Patient ID</span>
+        <span>First name</span>
+        <span>Last name</span>
+        <span>Date of birth</span>
+        <span>Gender</span>
+        <span>Primary insurance</span>
+        <span>Address</span>
+        <span>Contact number</span>
+        <span>Next of kin</span>
+        <span>Operation</span>
+      </li>
+    </ul>
+
+    <script src="./patient.js"></script>
+  </body>
+</html>
